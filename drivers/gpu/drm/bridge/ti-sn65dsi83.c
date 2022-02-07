@@ -691,7 +691,7 @@ static int sn65dsi83_probe(struct i2c_client *client,
 	ctx->enable_gpio = devm_gpiod_get_optional(ctx->dev, "enable",
 						   GPIOD_OUT_LOW);
 	if (IS_ERR(ctx->enable_gpio))
-		return PTR_ERR(ctx->enable_gpio);
+		return dev_err_probe(dev, PTR_ERR(ctx->enable_gpio), "failed to get enable GPIO\n");
 
 	usleep_range(10000, 11000);
 
@@ -701,7 +701,7 @@ static int sn65dsi83_probe(struct i2c_client *client,
 
 	ctx->regmap = devm_regmap_init_i2c(client, &sn65dsi83_regmap_config);
 	if (IS_ERR(ctx->regmap)) {
-		ret = PTR_ERR(ctx->regmap);
+		ret = dev_err_probe(dev, PTR_ERR(ctx->regmap), "failed to get regmap\n");
 		goto err_put_node;
 	}
 
