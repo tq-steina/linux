@@ -445,6 +445,13 @@ mode_fixup(struct drm_atomic_state *state)
 		funcs = encoder->helper_private;
 
 		bridge = drm_bridge_chain_get_first_bridge(encoder);
+		pr_info("bridge chain: ");
+		for (; bridge; bridge = drm_bridge_get_next_bridge(bridge)){
+			pr_cont("%pOF -> ", bridge->of_node);
+		}
+		pr_info("\n");
+		bridge = drm_bridge_chain_get_first_bridge(encoder);
+
 		ret = drm_atomic_bridge_chain_check(bridge,
 						    new_crtc_state,
 						    new_conn_state);
