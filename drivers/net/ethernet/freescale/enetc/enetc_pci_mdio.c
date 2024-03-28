@@ -29,10 +29,8 @@ static int enetc_pci_mdio_probe(struct pci_dev *pdev,
 
 	if (of_device_is_compatible(node, "fsl,imx95-netc-emdio")) {
 		err = netc_ierb_get_init_status();
-		if (err) {
-			dev_err(dev, "Cannot get IERB init status: %d\n", err);
-			return err;
-		}
+		if (err)
+			return dev_err_probe(dev, err, "Cannot get IERB init status\n");
 	}
 
 	pinctrl_pm_select_default_state(dev);
