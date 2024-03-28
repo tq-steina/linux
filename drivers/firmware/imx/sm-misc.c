@@ -54,6 +54,10 @@ static int scmi_imx_misc_ctrl_probe(struct scmi_device *sdev)
 
 	scmi_imx_misc_ctrl_nb.notifier_call = &scmi_imx_misc_ctrl_notifier;
 	wu_num = of_property_count_u32_elems(np, "wakeup-sources");
+	if (wu_num < 0) {
+		dev_warn(&sdev->dev, "No wakeup-sources\n");
+		return wu_num;
+	}
 	if (wu_num % 2) {
 		dev_err(&sdev->dev, "Invalid wakeup-sources\n");
 		return -EINVAL;
