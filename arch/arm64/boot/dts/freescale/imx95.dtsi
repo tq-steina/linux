@@ -1067,6 +1067,8 @@
 				clock-names = "per", "ipg";
 				dmas = <&edma2 9 0 1>, <&edma2 8 0 0>;
 				dma-names = "rx", "tx";
+				#address-cells = <1>;
+				#size-cells = <0>;
 				status = "disabled";
 			};
 
@@ -1079,6 +1081,8 @@
 				clock-names = "per", "ipg";
 				dmas = <&edma2 11 0 1>, <&edma2 10 0 0>;
 				dma-names = "rx", "tx";
+				#address-cells = <1>;
+				#size-cells = <0>;
 				status = "disabled";
 			};
 
@@ -1278,6 +1282,8 @@
 				clock-names = "per", "ipg";
 				dmas = <&edma2 72 0 1>, <&edma2 71 0 0>;
 				dma-names = "rx", "tx";
+				#address-cells = <1>;
+				#size-cells = <0>;
 				status = "disabled";
 			};
 
@@ -1290,6 +1296,8 @@
 				clock-names = "per", "ipg";
 				dmas = <&edma2 74 0 1>, <&edma2 73 0 0>;
 				dma-names = "rx", "tx";
+				#address-cells = <1>;
+				#size-cells = <0>;
 				status = "disabled";
 			};
 
@@ -1302,6 +1310,8 @@
 				clock-names = "per", "ipg";
 				dmas = <&edma2 76 0 1>, <&edma2 75 0 0>;
 				dma-names = "rx", "tx";
+				#address-cells = <1>;
+				#size-cells = <0>;
 				status = "disabled";
 			};
 
@@ -1314,6 +1324,8 @@
 				clock-names = "per", "ipg";
 				dmas = <&edma2 78 0 1>, <&edma2 77 0 0>;
 				dma-names = "rx", "tx";
+				#address-cells = <1>;
+				#size-cells = <0>;
 				status = "disabled";
 			};
 
@@ -1727,6 +1739,8 @@
 				clock-names = "per", "ipg";
 				dmas = <&edma1 13 0 1>, <&edma1 12 0 0> ;
 				dma-names = "rx", "tx";
+				#address-cells = <1>;
+				#size-cells = <0>;
 				status = "disabled";
 			};
 
@@ -1739,6 +1753,8 @@
 				clock-names = "per", "ipg";
 				dmas = <&edma1 15 0 1>, <&edma1 14 0 0> ;
 				dma-names = "rx", "tx";
+				#address-cells = <1>;
+				#size-cells = <0>;
 				status = "disabled";
 			};
 
