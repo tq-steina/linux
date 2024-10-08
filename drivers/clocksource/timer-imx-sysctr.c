@@ -20,8 +20,9 @@
 #define CMPCV_HI	(CMP_OFFSET + 0x24)
 #define CMPCR		(CMP_OFFSET + 0x2c)
 
-#define SYS_CTR_EN		0x1
-#define SYS_CTR_IRQ_MASK	0x2
+#define SYS_CTR_EN		BIT(0)
+#define SYS_CTR_IRQ_MASK	BIT(1)
+#define SYS_CTR_IRQ_STAT	BIT(2)
 
 #define SYS_CTR_CLK_DIV		0x3
 
