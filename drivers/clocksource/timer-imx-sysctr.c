@@ -198,7 +198,7 @@ static int __init sysctr_timer_init(struct device_node *np)
 
 	sys_ctr_base = timer_of_base(&to_sysctr);
 	cmpcr = readl(sys_ctr_base + CMPCR);
-	cmpcr &= ~SYS_CTR_EN;
+	cmpcr &= ~(SYS_CTR_EN | SYS_CTR_IRQ_STAT);
 
 	sysctr_clockevent_init();
 
