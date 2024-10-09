@@ -27,7 +27,7 @@ static const struct onboard_hub_pdata realtek_rts5411_data = {
 };
 
 static const struct onboard_hub_pdata ti_tusb8041_data = {
-	.reset_us = 3000,
+	.reset_us = 12000,
 	.num_supplies = 1,
 };
 
